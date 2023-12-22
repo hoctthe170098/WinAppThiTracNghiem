@@ -1,3 +1,5 @@
+create database WinAppTracNghiem
+use WinAppTracNghiem
 create table Accounts(
 username varchar(15) primary key,
 password varchar(15),
@@ -96,9 +98,4 @@ select * from Courses
 select * from QuestionOfCode
 insert into Enroll
 values ('hoctthe170098','Fa2023','DBI202')
-select * from Practice
-delete from Practice where ExamCode='DBI202_Fa2023_TestCode'
-select * from Accounts
-select Answers.* from Answers join AnswersOfQuestion on Answers.ID=AnswersOfQuestion.Answer and AnswersOfQuestion.Question=16
-select Questions.Title,Answers.Content from Questions join AnswersOfQuestion on Questions.ID=AnswersOfQuestion.Question and AnswersOfQuestion.IsTrue=1
-join Answers on AnswersOfQuestion.Answer=Answers.ID
+
