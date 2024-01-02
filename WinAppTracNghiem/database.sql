@@ -64,12 +64,10 @@ username varchar(15) references Accounts(username),
 ExamCode varchar(50) references ExamCode(Code),
 TimeBegin datetime,
 Long int,
-Mark float,
+Mark decimal(4,2),
 Status varchar(10)
 primary key (username,ExamCode)
 )
-alter table Practice
-add Mark decimal(4,2)
 alter table Questions
 add Course varchar(10) references Courses(Code)
 alter table Questions
@@ -87,6 +85,10 @@ values (N'CSI104', N'Introduction to Computer Science'),(N'ITA203c', N'Managemen
 (N'NWC203c', N'Computer Networking')
 insert into TypeOfQuestion
 values (1,'True/False'),(2,'One Answer'),(3,'Multi answer')
+insert into Semesters
+values('Fa2023',2023,'2023-8-1','2023-11-21'),('Sp2024',2024,'2024-1-2','2024-3-21')
+insert into Enroll
+values ('hoctthe170098','Fa2023','DBI202')
 select * from Questions
 select * from Answers
 select * from AnswersOfQuestion
@@ -96,6 +98,3 @@ select * from Accounts
 select * from Semesters
 select * from Courses
 select * from QuestionOfCode
-insert into Enroll
-values ('hoctthe170098','Fa2023','DBI202')
-
